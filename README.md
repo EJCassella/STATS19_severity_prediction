@@ -25,7 +25,7 @@ Specifically, the "Road Safety - Casualties last 5 years" and "Road Safety - Col
 ### Key considerations
 
 - Predictor is grouped as 'slight' or 'serious', a.k.a KSI (killed or seriously injured). If we are trying to predict which features lead to the most serious injuries, distinguishing between a serious injury or death seems unnecessary and makes model evaluation a lot more complicated.
-- The dataset for South Yorkshire is not huge, so using cross-validation (to use as much data as possible for training) seems more appropriate than having a trianing-validation-testing split.
+- The dataset for South Yorkshire is not huge, so using cross-validation (to use as much data as possible for training) seems more appropriate than having a training-validation-testing split.
 - There is a large imbalance in the 'slight' or 'serious' classes, so we need to evaluate our model appropriately and potentially consider additional techniques to improve the model performance. We also need to ensure the training and testing data is appropriately stratified (also using stratified K fold cross-validation).
 - There are multiple entries for some of the accident references, i.e. where there are multiple casualties. We should be careful that there isn't data leakage between the training and testing datasets if the same collision is split between the two.
 - This dataset has a large number of high-cardinality categorical features. This will take quite some playing around to encode the data appropriately without leading to severe model overfitting.
@@ -34,7 +34,8 @@ Specifically, the "Road Safety - Casualties last 5 years" and "Road Safety - Col
 
 - Improved feature selection and engineering to reduce overfitting and capture some data trends better (e.g. 'rush_hour').
 - Try additional techniques to improve performance on our unbalanced dataset, namely over or undersampling methods.
-- Pull out the feature importances from the final model.
+- Implement hyperparameter tuning
 - Evaluate the model on our testing data once it's fine tuned (the key will be reducing the overfitting).
+- Pull out the feature importances from the final model.
 - Look to include the "Vehicle" data to improve model performance.
 - Look to include other datasets that might enhance what we already have (e.g. accurate weather information? traffic volume / use data?)
