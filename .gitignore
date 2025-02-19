@@ -2,3 +2,5 @@
 
 *.csv
 !stats19_schema.csv
+
+.ipynb_checkpoints
